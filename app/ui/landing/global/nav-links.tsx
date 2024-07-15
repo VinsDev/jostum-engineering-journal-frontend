@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { lusitana } from '../fonts';
+import { lusitana } from '../../fonts';
 import clsx from 'clsx';
 
 // Map of links to display in the side navigation.
@@ -19,16 +19,17 @@ interface LandingPageNavLinksProps {
 
 const links: LinkItem[] = [
   { name: "Home", href: "/" },
-  { name: "Archives", href: "/archives" },
+  { name: "Journals", href: "/journals" },
   { name: "Guidelines", href: "/guidelines" },
   { name: "About", href: "/about" },
+  { name: "Archives", href: "/archives" },
   { name: "Contact", href: "/contact" },
 ];
 
 export default function LandingPageNavLinks({ open }: LandingPageNavLinksProps) {
   const pathname = usePathname();
   return (
-    <ul className={`md:flex md:items-center md:static absolute w-full md:w-auto left-0 md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-16' : 'top-[-490px]'}`}>
+    <ul className={`md:flex md:items-center md:static absolute w-full md:w-auto left-0 md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-0 border-b border-gray-500' : 'top-[-490px]'} bg-[white] md:bg-transparent`}>
       {links.map((link, index) => (
         <li key={index} className='md:ml-4 my-7 md:my-0'>
           <Link href={link.href} className={clsx(`${lusitana.className}hover:text-blue-400 duration-500 font-sans font-normal text-md`,

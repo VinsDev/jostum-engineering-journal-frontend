@@ -86,3 +86,38 @@ export type InvoiceForm = {
   amount: number;
   status: 'pending' | 'paid';
 };
+
+// ******************** 
+
+export type Category = {
+  name: string;
+  count: number;
+  link: string;
+};
+
+export type Volume = {
+  name: string;
+  link: string;
+}
+
+export type Publication = {
+  id: string,
+  title: string;
+  publishDate: string;
+  author: string;
+  abstract: string;
+  keywords: string;
+  views: number;
+  downloads: number;
+  volume: number;
+  issue: string;
+  link: string;
+};
+
+export type CategoryPageProps = {
+  categories: Category[];
+};
+
+export type VolumePageProps = {
+  volumes: Volume[];
+};

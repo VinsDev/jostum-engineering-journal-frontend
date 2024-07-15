@@ -16,3 +16,18 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+body {
+  @apply font-sans;
+  /* This uses the class from Tailwind to apply the Inter font globally */
+}
+
+/* If you want to use Lusitana for specific elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lusitana', serif;
+}
