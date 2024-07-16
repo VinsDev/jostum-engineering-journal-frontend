@@ -1,12 +1,5 @@
 import { Category, Publication, Volume } from "../lib/definitions";
 
-export const categories: Category[] = [
-    { name: 'Mechanical Engineering', count: 11, link: '/journals/mechanical-engineering' },
-    { name: 'Electrical and Electronics Engineering', count: 15, link: '/journals/electrical-and-electronics-engineering' },
-    { name: 'Civil Engineering', count: 52, link: '/journals/civil-engineering' },
-    { name: 'Agric and Environmental Engineering', count: 33, link: '/agric-and-environmental-engineering' },
-];
-
 export const volumes: Volume[] = [
     { name: 'Volume 1', link: '/archives/volume-1' },
 ]

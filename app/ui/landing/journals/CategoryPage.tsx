@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { publications } from '@/app/data/data';
 import { CategoryPageProps } from '@/app/lib/definitions';
 import { Breadcrumb } from 'antd';
+import { deslugify, slugify } from '@/app/lib/utils';
 
 
 const CategoryPage: React.FC<CategoryPageProps> = ({ categories }) => {
@@ -20,14 +21,13 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ categories }) => {
                         href: '/journals'
                     },
                     {
-                        title: (categories.find(category => category.link === pathname) || { name: '' }).name,
-
+                        title: deslugify(pathname.split('/')[2] || 'category'),
                     },
                 ]}
                 className="mb-3"
             />
             <h2 className="text-2xl font-bold mb-4">
-                {(categories.find(category => category.link === pathname) || { name: '' }).name} Publications
+                {deslugify(pathname.split('/')[2] || 'category')} Publications
             </h2>
             <div className="border border-gray-300 rounded-xl flex flex-col md:flex-row">
                 {/* Sidebar with categories */}
@@ -36,9 +36,9 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ categories }) => {
                     <ul>
                         {categories.map((category, index) => (
                             <li key={index} className="border-b ">
-                                <Link href={category.link}>
-                                    <div className={`px-6 py-2 block hover:bg-blue-300 ${category.link === pathname ? 'bg-blue-500 text-white' : 'text-gray-800'}`}>
-                                        {category.name} ({category.count})
+                                <Link href={`/journals/${slugify(category.name)}`}>
+                                    <div className={`px-6 py-2 block hover:bg-blue-300 ${(`/journals/${slugify(category.name)}`) === pathname ? 'bg-blue-500 text-white' : 'text-gray-800'}`}>
+                                        {category.name}
                                     </div>
                                 </Link>
                             </li>

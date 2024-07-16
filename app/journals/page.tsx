@@ -1,9 +1,28 @@
+"use client";
+
 import Link from 'next/link';
 import FloatingHeader from "../ui/landing/global/floating-header";
-import { categories } from '../data/data';
+import { useEffect, useState } from 'react';
+import api from '../services/api';
+import { Category } from '../lib/definitions';
+import { slugify } from '../lib/utils';
 
 
 export default function Page() {
+    const [categories, setCategories] = useState<Category[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await api.get('/categories');
+                setCategories(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchData();
+    }, []);
+
     return <div>
         <FloatingHeader />
         <div className="mx-auto p-8">
@@ -11,9 +30,9 @@ export default function Page() {
             <div className="border border-gray-300 rounded grid grid-cols-1 md:grid-cols-3 gap-2">
                 {categories.map((category, index) => (
                     <div key={index} className="border-b border-gray-300">
-                        <Link href={category.link}>
+                        <Link href={`/journals/${slugify(category.name)}`}>
                             <div className="block p-4 hover:bg-gray-100 transition">
-                                {category.name} ({category.count})
+                                {category.name}
                             </div>
                         </Link>
                     </div>

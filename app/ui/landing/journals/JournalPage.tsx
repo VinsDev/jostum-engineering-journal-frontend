@@ -4,6 +4,7 @@ import { publications } from "@/app/data/data";
 import { DocumentIcon } from "@heroicons/react/24/outline";
 import { usePathname } from 'next/navigation';
 import { Breadcrumb } from 'antd';
+import { deslugify } from "@/app/lib/utils";
 
 export default function JournalPage() {
     const pathname = usePathname();
@@ -27,7 +28,7 @@ export default function JournalPage() {
                         href: '/journals'
                     },
                     {
-                        title: pathname.split('/')[2]?.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'Category',
+                        title: deslugify(pathname.split('/')[2] || 'category'),
                         href: pathname.split('/').slice(0, 3).join('/'),
                     },
                     {

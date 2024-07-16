@@ -91,8 +91,6 @@ export type InvoiceForm = {
 
 export type Category = {
   name: string;
-  count: number;
-  link: string;
 };
 
 export type Volume = {
