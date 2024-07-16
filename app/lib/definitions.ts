@@ -90,6 +90,7 @@ export type InvoiceForm = {
 // ******************** 
 
 export type Category = {
+  id: number;
   name: string;
 };
 
@@ -108,6 +109,9 @@ export type Publication = {
   views: number;
   downloads: number;
   volume: number;
+  volume_number: number;
+  categoryId: number;
+  category_name: string;
   issue: string;
   link: string;
 };
