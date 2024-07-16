@@ -3,7 +3,7 @@
 import { DocumentIcon } from "@heroicons/react/24/outline";
 import { useParams, usePathname } from 'next/navigation';
 import { Breadcrumb } from 'antd';
-import { deslugify, formatDate } from "@/app/lib/utils";
+import { deslugify, formatDate, handleUpdateDownloads } from "@/app/lib/utils";
 import { useEffect, useState } from "react";
 import { Publication } from "@/app/lib/definitions";
 import api from "@/app/services/api";
@@ -14,18 +14,27 @@ export default function JournalPage() {
     const { id } = useParams();
     const [publication, setPublication] = useState<Publication | null>(null);
 
-    useEffect(() => {
-        const fetchPublication = async () => {
-            try {
-                const response = await api.get<Publication>(`/get-publication/${id}`);
-                setPublication(response.data);
-            } catch (error) {
-                console.error('Error fetching publication:', error);
-            }
-        };
+    const fetchPublication = async () => {
+        try {
+            const response = await api.get<Publication>(`/get-publication/${id}`);
+            setPublication(response.data);
+        } catch (error) {
+            console.error('Error fetching publication:', error);
+        }
+    };
 
+    useEffect(() => {
         fetchPublication();
     }, [id]);
+
+    const handleDownloadClick = async (publicationId: string) => {
+        try {
+            await handleUpdateDownloads(publicationId);
+            await fetchPublication();
+        } catch (error) {
+            console.error('Error updating downloads:', error);
+        }
+    };
 
     if (!publication) {
         return <div>Loading...</div>;
@@ -61,7 +70,7 @@ export default function JournalPage() {
                         <p className="my-1"><span className='font-semibold'>Publisher name: </span>JOSTUM JOURNAL OF ENGINEERING</p>
                         <p className="my-1"><span className='font-semibold'>Views:</span> <span className='text-blue-500'>{publication.views}</span>, <span className='font-semibold'>Downloads:</span> <span className='text-blue-500'>{publication.downloads}</span></p>
                     </div>
-                    <a
+                    <a onClick={((e) => { handleDownloadClick(publication.id) })}
                         className="flex items-center justify-center rounded-lg bg-blue-500 hover:bg-blue-600 px-6 py-3 text-white text-sm font-semibold transition-colors duration-300 ease-in-out shadow-md my-4 md:my-0" href={`${'http://localhost:3001'}/download-publication/${publication.id}`}
                     >
                         <DocumentIcon className="h-5 w-5 mr-2" />

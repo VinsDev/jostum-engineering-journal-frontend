@@ -1,5 +1,5 @@
 import JournalPage from "@/app/ui/landing/journals/JournalPage";
-import FloatingHeader from "@/app/ui/landing/global/floating-header";
+import FloatingHeader from "@/app/ui/landing/global/FloatingHeader";
 
 export default function Page() {
     return <div>

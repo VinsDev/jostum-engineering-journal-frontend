@@ -5,17 +5,20 @@ import Image from 'next/image';
 import { Bars3BottomRightIcon, XMarkIcon, EnvelopeIcon, MagnifyingGlassIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
 import LandingPageNavLinks from './nav-links';
+import Link from 'next/link';
 
 const FloatingHeader = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className='container mx-auto flex items-center justify-between py-2 '>
+        <div className='container mx-auto flex items-center justify-between py-2 pl-2 md:pl-0'>
             {/* Logo Section */}
-            <div className='flex items-center cursor-pointer pl-2 md:pl-0'>
-                <Image src='/logo.png' alt='Website Logo' width={80} height={80} />
-                <span className={`${lusitana.className} font-bold text-lg ml-2 text-blue-900`}>JOSTUM JOURNAL <br />OF ENGINEERING</span>
-            </div>
+            <Link href='/'>
+                <div className='flex items-center cursor-pointer'>
+                    <Image src='/logo.png' alt='Website Logo' width={80} height={80} />
+                    <span className={`${lusitana.className} font-bold text-lg ml-2 text-blue-900`}>JOSTUM JOURNAL <br />OF ENGINEERING</span>
+                </div>
+            </Link>
             {/* Menu Icon */}
             <div onClick={() => setOpen(!open)} className='md:hidden cursor-pointer z-10'>
                 {open ? <XMarkIcon className='w-7 h-7' /> : <Bars3BottomRightIcon className='w-7 h-7' />}
@@ -23,9 +26,8 @@ const FloatingHeader = () => {
             {/* Link Items */}
             <LandingPageNavLinks open={open} />
             <div className='flex justify-center items-center'>
-
                 {/* Search Bar */}
-                <div className='relative hidden md:flex items-center border border-gray-300 rounded-full px-2 py-1 focus-within:border-blue-600 focus-within:shadow-md mr-3 bg-[#EBEBEB]'>
+                {/* <div className='relative hidden md:flex items-center border border-gray-300 rounded-full px-2 py-1 focus-within:border-blue-600 focus-within:shadow-md mr-3 bg-[#EBEBEB]'>
                     <MagnifyingGlassIcon className='w-4 h-4 text-gray-800 ml-2' />
                     <input
                         type='text'
@@ -35,14 +37,15 @@ const FloatingHeader = () => {
                     <button className='flex items-center justify-center w-8 h-8 bg-blue-400 rounded-full'>
                         <ArrowRightIcon className='w-4 h-4 text-white' />
                     </button>
-                </div>
+                </div> */}
 
                 {/* Email Icon */}
-                {/* <div className='hidden md:block'>
+                <div className='md:w-[215px]'></div>
+                <div className='hidden md:block'>
                     <button className='flex items-center justify-center bg-[#EBEBEB] rounded-full p-3'>
                         <EnvelopeIcon className='w-6 h-6 text-blue-500' />
                     </button>
-                </div> */}
+                </div>
             </div>
         </div>
     );

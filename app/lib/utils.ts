@@ -1,3 +1,4 @@
+import api from '../services/api';
 import { Revenue } from './definitions';
 
 export const formatCurrency = (amount: number) => {
@@ -87,4 +88,22 @@ export function deslugify(slug: string): string {
 export const formatDate = (dateString: string) => {
   const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
   return new Date(dateString).toLocaleDateString(undefined, options);
+};
+
+export const handleUpdateViews = async (publicationId: string) => {
+  try {
+      const response = await api.put(`/update-views/${publicationId}`);
+      console.log(response.data);
+  } catch (error) {
+      console.error('Error:', error);
+  }
+};
+
+export const handleUpdateDownloads = async (publicationId: string) => {
+  try {
+      const response = await api.put(`/update-downloads/${publicationId}`);
+      console.log(response.data);
+  } catch (error) {
+      console.error('Error:', error);
+  }
 };

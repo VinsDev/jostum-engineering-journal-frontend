@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Category, Publication } from '@/app/lib/definitions';
 import { Breadcrumb } from 'antd';
-import { deslugify, formatDate, slugify } from '@/app/lib/utils';
+import { deslugify, formatDate, handleUpdateViews, slugify } from '@/app/lib/utils';
 import api from '@/app/services/api';
 
 const CategoryPage = () => {
@@ -90,11 +90,11 @@ const CategoryPage = () => {
                         <ul>
                             {publications.map((publication) => (
                                 <li key={publication.id} className="pb-6 mt-4 border-b border-gray-300">
-                                    <Link href={`${pathname}/${publication.id}`}>
+                                    <Link onClick={(e) => handleUpdateViews(publication.id)} href={`${pathname}/${publication.id}`}>
                                         <div className="text-blue-800 font-bold text-lg">{publication.title}</div>
                                     </Link>
                                     <p>Publish date: {formatDate(publication.publishDate)}</p>
-                                    <p>Views: <span className='text-blue-500'>{publication.views}</span>, Downloads: <span className='text-blue-500'>{publication.downloads}</span>, Volume: <span className='text-blue-500'>{publication.volume}</span>, Issue: <span className='text-blue-500'>{publication.issue}</span></p>
+                                    <p>Views: <span className='text-blue-500'>{publication.views}</span>, Downloads: <span className='text-blue-500'>{publication.downloads}</span>, Volume: <span className='text-blue-500'>Volume {publication.volume_number}</span>, Issue: <span className='text-blue-500'>{publication.issue}</span></p>
                                 </li>
                             ))}
                         </ul>

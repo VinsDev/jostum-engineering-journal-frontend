@@ -95,8 +95,8 @@ export type Category = {
 };
 
 export type Volume = {
-  name: string;
-  link: string;
+  number: number;
+  year: string;
 }
 
 export type Publication = {
