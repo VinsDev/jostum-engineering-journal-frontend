@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+export const baseUrl = 'https://jostum-engineering-journal-backend.onrender.com';
+
 const api = axios.create({
-    baseURL: 'https://jostum-engineering-journal-backend.onrender.com',
+    baseURL: baseUrl,
     headers: {
         'Content-Type': 'application/json',
     },
