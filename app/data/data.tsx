@@ -1,7 +1,7 @@
 export const editorialTeamHeads = [
     {
         name: 'Engr. Prof. J. A. Enokela',
-        affiliation: 'Department of Electrical & Electronics, JOSTUM',
+        affiliation: 'Department of Electrical & Electronics Engineering, JOSTUM',
         position: 'Chief Editor'
     },
     {
@@ -39,7 +39,7 @@ export const editorialTeamMembers = [
     },
     {
         name: 'Engr. Prof. A. W Salami',
-        affiliation: 'Department of Civil Engineering, JOSTUM',
+        affiliation: 'Department of Civil Engineering, University of Ilorin',
         position: 'Member'
     },
     {
@@ -59,7 +59,12 @@ export const editorialTeamMembers = [
     },
     {
         name: 'Engr. Dr. S. M Saheed',
-        affiliation: 'Department of Agric Engineering, JOSTUM',
+        affiliation: 'Department of Agric Engineering, University of Ilorin',
+        position: 'Member'
+    },
+    {
+        name: 'Dr. Ochai Oklobia. ',
+        affiliation: 'Thin Film Scientist.\nochai.oklobia@photek.co.uk',
         position: 'Member'
     },
 ];

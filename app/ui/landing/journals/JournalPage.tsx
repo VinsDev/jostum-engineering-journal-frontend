@@ -76,7 +76,6 @@ export default function JournalPage() {
                         <DocumentIcon className="h-5 w-5 mr-2" />
                         <span>Download PDF</span>
                     </a>
-
                 </div>
                 <h3 className="text-xl font-bold mt-4 mb-1">Authors</h3>
                 <p>{publication.author}</p>
