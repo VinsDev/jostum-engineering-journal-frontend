@@ -18,7 +18,7 @@ export const editorialTeamHeads = [
 
 export const editorialTeamMembers = [
     {
-        name: 'Engr. Dr. Fadoo Union',
+        name: 'Engr. Dr. Fadoo Unom',
         affiliation: 'Department of Mechanical Engineering, JOSTUM',
         position: 'Member'
     },
