@@ -38,13 +38,28 @@ export const editorialTeamMembers = [
         position: 'Member'
     },
     {
-        name: 'Engr. Prof. T. S Ijimdiya',
-        affiliation: 'Department of Civil Engineering, ABU Zaria',
+        name: 'Engr. Dr. John Audu',
+        affiliation: 'Department of Agricultural and Environmental Engineering, JOSTUM',
+        position: 'Member'
+    },
+    {
+        name: 'Engr. Prof. T. K Kaankuka',
+        affiliation: 'Department of Agricultural and Environmental Engineering, JOSTUM',
+        position: 'Member'
+    },
+    {
+        name: 'Engr. Dr. Iwar R.',
+        affiliation: 'Department of Agricultural and Environmental Engineering, JOSTUM',
         position: 'Member'
     },
     {
         name: 'Engr. Prof. J. E Edeh',
         affiliation: 'Department of Civil Engineering Engineering, JOSTUM',
+        position: 'Member'
+    },
+    {
+        name: 'Engr. Prof. T. S Ijimdiya',
+        affiliation: 'Department of Civil Engineering, ABU Zaria',
         position: 'Member'
     },
     {
@@ -63,23 +78,8 @@ export const editorialTeamMembers = [
         position: 'Member'
     },
     {
-        name: 'Engr. Dr. John Audu',
-        affiliation: 'Department of Agric Engineering, JOSTUM',
-        position: 'Member'
-    },
-    {
-        name: 'Engr. Prof. T. K Kaankuka',
-        affiliation: 'Department of Agric Engineering, JOSTUM',
-        position: 'Member'
-    },
-    {
-        name: 'Engr. Dr. Iwar R.',
-        affiliation: 'Department of Agric Engineering, JOSTUM',
-        position: 'Member'
-    },
-    {
         name: 'Engr. Dr. S. M Saheed',
-        affiliation: 'Department of Agric Engineering, University of Ilorin',
+        affiliation: 'Department of Agricultural and Environmental Engineering, University of Ilorin',
         position: 'Member'
     },
     {
