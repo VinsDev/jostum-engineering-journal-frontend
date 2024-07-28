@@ -18,6 +18,26 @@ export const editorialTeamHeads = [
 
 export const editorialTeamMembers = [
     {
+        name: 'Engr. Dr. Fadoo Union',
+        affiliation: 'Department of Mechanical Engineering, JOSTUM',
+        position: 'Member'
+    },
+    {
+        name: 'Engr. Prof. A. Ashwe',
+        affiliation: 'Department of Mechanical Engineering, JOSTUM',
+        position: 'Member'
+    },
+    {
+        name: 'Engr. Prof. D. T Gundu',
+        affiliation: 'Department of Mechanical Engineering, JOSTUM',
+        position: 'Member'
+    },
+    {
+        name: 'Engr. Prof. J. S. Ibrahim',
+        affiliation: 'Department of Mechanical Engineering, JOSTUM',
+        position: 'Member'
+    },
+    {
         name: 'Engr. Prof. T. S Ijimdiya',
         affiliation: 'Department of Civil Engineering, ABU Zaria',
         position: 'Member'
